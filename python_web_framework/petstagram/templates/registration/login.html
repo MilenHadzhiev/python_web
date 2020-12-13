@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block site_content %}
+    <div class="container">
+        <form class="w-50 m-auto" method="post" style="border: 1px solid grey; margin: 10% 0%; padding: 5% 5%"
+              action="{% url 'login' %}">
+            <h2>Login</h2>
+            {% csrf_token %}
+
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label }}:
+                    {{ field }}
+                </div>
+            {% endfor %}
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+{% endblock site_content %}

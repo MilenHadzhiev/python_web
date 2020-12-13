@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block site_content %}
+    <div class="container">
+        <div class="d-flex">
+            <div class="d-inline p-2 w-50">
+                <img src="{{ pet.image.url }}" class="w-50 rounded mx-auto d-block">
+            </div>
+            <div class="d-inline p-2 w-50">
+                <div class="d-flex justify-content-between">
+                    <h5><u>Type:</u> {{ pet.type }}</h5>
+                    <h5><u>Name:</u> {{ pet.name }}</h5>
+                    <h5><u>Age:</u> {{ pet.age }}</h5>
+                    <h5><u>Owner:</u> <a href="{% url 'user profile' pet.user.user_id %}">{{ pet.user.user.username }}</a></h5>
+                </div>
+                <p class="mt-2">Description: {{ pet.description }}</p>
+
+                {% if can_like %}
+                    {% if has_liked %}
+                        <a href="{% url 'pet like' pet.id %}"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                    {% else %}
+                        <a href="{% url 'pet like' pet.id %}"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                    {% endif %}
+                {% endif %}
+
+                <p class="mt-2">Likes: {{ pet.like_set.count }}</p>
+                {% if can_change %}
+                    <a href="{% url 'edit pet' pet.id %}" class="btn btn-success">Edit Pet</a>
+                    <a href="{% url 'delete pet' pet.id %}" class="btn btn-danger">Delete Pet</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="d-block" style="background-color: #f1e3e3; padding: 2%;">
+            {% if pet.comment_set.count > 0 %}
+                <h3>Comments</h3>
+                {% for comment in pet.comment_set.all %}
+                    {{ forloop.counter }}.<a href="{% url 'user profile' comment.user_id %}">{{ pet.user.user.username }}</a>
+                    <p>{{ comment }}</p>
+                    <br>
+                {% endfor %}
+            {% else %}
+                <p>No comments</p>
+            {% endif %}
+            {% if can_comment %}
+                <div style="text-align: left">
+                    <h5>Add a comment</h5>
+                    <form method="post" action="{% url 'pet details' pet.id %}">
+                        {% csrf_token %}
+                        {{ comment_form.comment.label }}
+                        <input
+                                type="text"
+                                name="{{ comment_form.comment.html_name }}"
+                                style="width: 100%; height: 150px">
+                        <button
+                                class="btn btn-primary mt-2"
+                                type="submit"
+                                style="display: block">Comment
+                        </button>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

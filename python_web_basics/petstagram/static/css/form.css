@@ -1,0 +1,53 @@
+section {
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    border: gray 2px solid;
+    width: 40%;
+    margin: auto;
+    padding: 10px;
+}
+label {
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    margin: 5px;
+}
+
+input {
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    margin: 1px;
+    padding: 5px 0;
+}
+
+.sign .element {
+    display: inline-block;
+    margin: 0px;
+}
+.sign button {
+    background-color: blue;
+}
+
+.sign a {
+    color: orange;
+}
+
+.form li{
+    list-style-type: none;
+    display: block;
+}
+
+.form {
+  width: 80%;
+  clear: both;
+}
+
+.form input {
+  width: 100%;
+  clear: both;
+}
+.sign button{
+    color: darkgrey;
+    text-decoration: none;
+}
+
+.sign button:hover {
+    color: dimgrey;
+    cursor: pointer;
+}

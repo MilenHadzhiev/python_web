@@ -1,0 +1,76 @@
+hr {
+    color: dimgray;
+}
+
+.sign {
+    display: inline-block;
+    margin: 30px;
+    flex: 50%;
+}
+
+.centered {
+    text-align: center;
+}
+
+button {
+    background-color: #4f4f4f;
+    padding: 15px;
+    font-family: sans-serif, "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial;
+    color: white;
+    border-radius: 10px;
+}
+
+nav {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 2px;
+    font-family: sans-serif, "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial;
+    margin-bottom: 30px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+        display: inline-block;
+
+}
+
+.nav-item {
+    margin: 5px;
+}
+
+.welcome {
+    border-radius: 10px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+a {
+    color: darkgrey;
+    text-decoration: none;
+}
+
+a:hover {
+    color: dimgrey;
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-size: 1.5em;
+    color: #4f4f4f;
+    font-weight: bold;
+    font-family: sans-serif, "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial;
+}
+
+p {
+    color: #4f4f4f;
+    font-family: sans-serif, "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial;
+}

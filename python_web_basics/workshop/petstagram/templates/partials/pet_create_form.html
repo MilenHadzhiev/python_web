@@ -1,0 +1,65 @@
+{% block pet_form %}
+    <div class="container">
+        <div class="container">
+            <h1 class="text-center">Add new pet photo</h1>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <form method="post" class="col-lg-6 offset-lg-3" action="{% url 'create pet' %}">
+                        <div class="col-md-10 offset-md-1">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {{ pet_form.type.label }}
+                                <select
+                                        name="{{ pet_form.type.html_name }}"
+                                        id="{{ pet_form.type.id_for_label }}">
+                                    {% for somt, choice in pet_form.PET_CHOICES %}
+                                        <option selected="{{ pet_form.PET_CHOICES.UNKNOWN }}">
+                                            {{ choice }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                {{ pet_form.errors.type }}
+                            </div>
+                            <div class="form-group">
+                                {{ pet_form.name.label }}
+                                {{ pet_form.name }}
+                                {#                        <input#}
+                                {#                                type="text"#}
+                                {#                                name="{{ pet_form.name.html_name }}"#}
+                                {#                                id="{{ pet_form.name.id_for_label }}"#}
+                                {#                                value="{{ pet.name }}">#}
+                                {{ pet_form.errors.name }}
+                            </div>
+                            <div class="form-group">
+                                {{ pet_form.age.label }}
+                                {{ pet_form.age }}
+                                {#                        <input#}
+                                {#                                type="number"#}
+                                {#                                name="{{ pet_form.age.html_name }}"#}
+                                {#                                id="{{ pet_form.age.id_for_label }}"#}
+                                {#                                value="{{ pet.age }}">#}
+                                {{ pet_form.errors.age }}
+                            </div>
+                            <div class="form-group">
+                                {{ pet_form.description.label }}
+                                {{ pet_form.description }}
+                                {#                        <input#}
+                                {#                                type="text"#}
+                                {#                                name="{{ pet_form.description.html_name }}"#}
+                                {#                                id="{{ pet_form.description.id_for_label }}"#}
+                                {#                                value="{{ pet.description }}">#}
+                                {{ pet_form.errors.description }}
+                            </div>
+                            <div class="custom-file">
+                                <label for="image" class="custom-file-label">Choose Image</label>
+                                {{ pet_form.image }}
+                            </div>
+                            <button class="btn btn-primary mt-2" type="submit">Edit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

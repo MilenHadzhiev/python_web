@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New TODO</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+<h1>Fill out the form!</h1>
+<div class="container">
+    {% if pk %}
+        <form method="post" action="{% url form_action pk %}">
+    {% else %}
+        <form method="post" action="{% url form_action %}">
+
+    {% endif %}
+    <div class="container create">
+        {% csrf_token %}
+        <div>
+            {{ form.title.label }}
+            {{ form.errors.title }}
+
+            <input
+                    type="text"
+                    name="{{ form.title.html_name }}"
+                    id="{{ form.title.id_for_label }}"
+                    value="{{ form.title.value }}"/>
+        </div>
+        <div>
+            {{ form.description.label }}
+            {{ form.errors.description }}
+
+            <textarea
+                    name="{{ form.description.html_name }}"
+                    id="{{ form.description.id_for_label }}">{{ form.description.value }}</textarea>
+        </div>
+        {{ form.bot_catcher }}
+        <a class="btn btn-primary">
+            <button class="btn btn-primary">Submit</button>
+        </a>
+        <a class="btn btn-primary" href="{% url 'index' %}">Return</a>
+    </div>
+    </form>
+</div>
+</body>
+</html>

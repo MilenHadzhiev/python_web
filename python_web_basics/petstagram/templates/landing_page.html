@@ -1,0 +1,38 @@
+{% extends 'shared/site.html' %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/landing_page.css' %}"/>
+{% endblock %}
+
+{% block site_title %}
+    Welcome to Petstagram
+{% endblock %}
+
+{% block site_content %}
+
+    <section class="welcome">
+        <img class="pets" src="https://activepets.co.za/web/ap-content/uploads/2019/08/Active-pets-dogs-and-cats.png"
+             alt="Pets">
+        <h1>Welcome to Petstagram</h1>
+        <p>Share your pets photos</p>
+        <hr>
+        <div class="sign">
+            <div>
+                <p>Already have an account?</p>
+                <button>
+                    <a href="../login/">sign in</a>
+                </button>
+            </div>
+        </div>
+        <div class="sign">
+            <div>
+                <p>Do not have an account?</p>
+                <button>
+                    <a href="../register/">sign up</a>
+                </button>
+            </div>
+        </div>
+    </section>
+{% endblock %}

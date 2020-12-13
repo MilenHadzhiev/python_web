@@ -1,0 +1,50 @@
+{% block pet_form %}
+    <div class="container">
+        <div class="container">
+            <h1 class="text-center">Add new pet photo</h1>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <form method="post" class="col-lg-6 offset-lg-3" enctype="multipart/form-data" action="{% url 'create pet' %}">
+                        <div class="col-md-10 offset-md-1">
+                            {% csrf_token %}
+{#                            <div class="form-group">#}
+{#                                {{ pet_form.type.label }}#}
+{#                                <select name="{{ pet_form.type.html_name }}"#}
+{#                                        id="{{ pet_form.type.id_for_label }}">#}
+{#                                    {% for somt, choice in pet_form.PET_CHOICES %}#}
+{#                                        <option selected="{{ pet_form.PET_CHOICES.UNKNOWN }}">#}
+{#                                            {{ somt }}#}
+{#                                            {{ choice }}#}
+{#                                        </option>#}
+{#                                    {% endfor %}#}
+{#                                </select>#}
+{#                                {{ pet_form.errors.type }}#}
+{#                            </div>#}
+                            <div class="form-group">
+                                {{ pet_form.name.label }}
+                                {{ pet_form.name }}
+                                {{ pet_form.errors.name }}
+                            </div>
+                            <div class="form-group">
+                                {{ pet_form.age.label }}
+                                {{ pet_form.age }}
+                                {{ pet_form.errors.age }}
+                            </div>
+                            <div class="form-group">
+                                {{ pet_form.description.label }}
+                                {{ pet_form.description }}
+                                {{ pet_form.errors.description }}
+                            </div>
+                            <div>
+                                <label for="image">Choose Image</label>
+                                {{ pet_form.image }}
+                            </div>
+                            <button class="btn btn-primary mt-2" type="submit">Edit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

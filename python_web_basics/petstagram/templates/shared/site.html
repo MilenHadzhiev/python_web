@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block site_title %}Petstagram{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/clear.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="icon" type="image/png" href="https://pluspng.com/img-png/instagram-png-instagram-png-icon-1024.png">
+    {% block styles %}
+    {% endblock %}
+</head>
+<body>
+
+<div id="root">
+    {% include 'partials/nav.html' %}
+    {% block site_content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+<h1>My Todo List</h1>
+{% if todos %}
+    <div class="container todo">
+    {% for todo in todos %}
+        <div class="todo">
+        <p>{{ todo.title }}</p>
+        <div class="description">{{ todo.description }}</div>
+        {% if todo.is_done %}
+            <div class="done">
+            <form method="post" action="{% url 'mark todo done' todo.id %}">
+                {% csrf_token %}
+                <button>Done</button>
+            </form>
+        {% else %}
+            <div class="undone">
+            <form method="post" action="{% url 'mark todo done' todo.id %}">
+                {% csrf_token %}
+                <button>Not done</button>
+            </form>
+        {% endif %}
+    </div>
+    <a class="btn btn-primary" href='edit/{{ todo.id }}'>Update</a>
+    <a class="btn btn-primary" href='delete/{{ todo.id }}'>Delete</a>
+    </div>
+    {% endfor %}
+<div>
+    <a class="btn btn-primary" href="{% url 'create_template' %}">Create a new Todo</a>
+</div>
+</div>
+
+{% else %}
+    <h2>No TODOs</h2>
+    <h2>Go to <a href={% url 'create_template' %}>createTodo</a> to create a new TODO</h2>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,102 @@
+body {
+    font-family: 'Monotype Corsiva', "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, cursive;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+h1 {
+    margin: 5px;
+    text-align: center;
+    padding: 5px;
+}
+
+h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: grey;
+}
+
+.container.todo {
+    width: 50%;
+    display: flex;
+}
+
+.container {
+    width: 50%;
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+}
+form.container{
+    background: greenyellow;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.container.create textarea {
+    resize: none;
+}
+
+a:hover {
+    color: dimgrey;
+    cursor: pointer;
+}
+
+div.done {
+    color: green;
+    font-weight: bold;
+}
+
+div.open {
+    color: red;
+    font-weight: bold;
+}
+
+div.todo {
+    display: block;
+    background: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 5px;
+    text-align: center;
+}
+
+div.todo p {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+div.todo div.description {
+    padding: 10px;
+}
+
+div.container {
+    background: greenyellow;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.btn.btn-primary {
+    text-align: center;
+}
+
+.form_errors {
+    font-size: 15px;
+}
+
+.done button {
+    color: green;
+}
+
+.undone button {
+    color: red;
+}

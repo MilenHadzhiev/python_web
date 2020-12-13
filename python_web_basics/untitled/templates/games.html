@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Games</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+<h1>{{ title }}</h1>
+<ul>
+    {% for game in object_list %}
+        <li class="highlightable">
+            {{ game.name }}
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

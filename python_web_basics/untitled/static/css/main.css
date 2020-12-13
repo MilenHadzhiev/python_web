@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    font-family: "Monotype Corsiva", cursive;
+    font-size: 40px;
+    color: blue;
+    text-decoration: underline;
+}
+
+li {
+    color: aqua;
+}

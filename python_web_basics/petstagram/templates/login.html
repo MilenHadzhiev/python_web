@@ -1,0 +1,38 @@
+{% extends 'shared/site.html' %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+{% endblock %}
+
+{% block site_title %}
+    Welcome to Petstagram
+{% endblock %}
+
+{% block site_content %}
+    <section>
+        <div class="form">
+            <ul>
+                <li>
+                    <h1>Login</h1>
+                    <label>Username:
+                        <input  type="text" id="username"
+                               name="username" formmethod="post" required>
+                    </label>
+                </li>
+                <li>
+                    <label>Password:
+                        <input type="password" id="password"
+                               name="password" formmethod="post" required>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="sign">
+            <button class="sign">
+                <a href="">Login</a>
+            </button>
+        </div>
+    </section>
+{% endblock %}
